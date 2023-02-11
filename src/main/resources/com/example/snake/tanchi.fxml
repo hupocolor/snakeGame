@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.snake.SnakeController">
+   <children>
+      <Pane fx:id="root" onKeyPressed="#changeSnakeDirect" onMouseClicked="#snakeMove" prefHeight="79.0" prefWidth="600.0">
+         <children>
+            <Button fx:id="bGameButton" layoutX="28.0" layoutY="15.0" mnemonicParsing="false" onAction="#beginButtonAc" text="重新开始" />
+            <Button fx:id="pauseGameButton" layoutX="28.0" layoutY="42.0" mnemonicParsing="false" onAction="#snakeMove" text="游戏开始" />
+            <ChoiceBox fx:id="selectLevel" layoutX="106.0" layoutY="42.0" prefHeight="23.0" prefWidth="93.0" />
+            <Label layoutX="129.0" layoutY="19.0" text="当前难度" />
+            <Label layoutX="211.0" layoutY="19.0" text="当前分数" />
+            <Label layoutX="211.0" layoutY="46.0" text="历史最高分" />
+            <TextField fx:id="nowScoreText" editable="false" layoutX="282.0" layoutY="15.0" prefHeight="23.0" prefWidth="101.0" />
+            <TextField fx:id="maxScoreText" editable="false" layoutX="282.0" layoutY="42.0" prefHeight="23.0" prefWidth="101.0" />
+            <Label fx:id="messageText" layoutX="424.0" layoutY="18.0" prefHeight="43.0" prefWidth="131.0" />
+         </children>
+      </Pane>
+      <Canvas fx:id="gameCanvas" height="310.0" width="600.0" />
+   </children>
+</VBox>

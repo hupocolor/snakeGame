@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
 <?import javafx.scene.canvas.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
@@ -15,7 +17,11 @@
             <Label layoutX="211.0" layoutY="46.0" text="历史最高分" />
             <TextField fx:id="nowScoreText" editable="false" layoutX="282.0" layoutY="15.0" prefHeight="23.0" prefWidth="101.0" />
             <TextField fx:id="maxScoreText" editable="false" layoutX="282.0" layoutY="42.0" prefHeight="23.0" prefWidth="101.0" />
-            <Label fx:id="messageText" layoutX="424.0" layoutY="18.0" prefHeight="43.0" prefWidth="131.0" />
+            <HBox fx:id="hBox" layoutX="394.0" prefHeight="79.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="messageText" prefHeight="43.0" prefWidth="93.0" />
+               </children>
+            </HBox>
          </children>
       </Pane>
       <Canvas fx:id="gameCanvas" height="310.0" width="600.0" />

@@ -3,6 +3,7 @@ package com.example.snake;
 import com.example.bean.Home;
 import com.example.bean.Snake;
 import com.example.draw.DrawSnake;
+import com.example.draw.TimeLabel;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -13,6 +14,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 
 import java.io.*;
@@ -30,6 +32,10 @@ public class SnakeController implements Initializable{
     private TextField maxScoreText;
     @FXML
     private ChoiceBox selectLevel;
+
+    @FXML
+    private HBox hBox;
+
     DrawSnake drawSnake;
     int level = 1;
     int nowLevel = level;
@@ -61,6 +67,7 @@ public class SnakeController implements Initializable{
 
     @FXML
     protected void init() { //用于初始化页面
+        hBox.getChildren().add(new TimeLabel());
         maxScoreText.setText(String.valueOf(maxscore));
         selectLevel.getItems().addAll("简单","普通","困难","地狱","魔鬼","不可能");
         selectLevel.setValue("简单");
@@ -112,6 +119,10 @@ public class SnakeController implements Initializable{
     public boolean eatAndJudge(){
         if(Home.getSnake().getHead().getX()==Home.getFood().getX() && Home.getSnake().getHead().getY() == Home.getFood().getY()) {
             Home.getSnake().eat(Home.getFood());
+//            Home.getSnake().eat(Home.getFood());
+//            Home.getSnake().eat(Home.getFood());
+//            Home.getSnake().eat(Home.getFood());
+//            Home.getSnake().eat(Home.getFood());
             drawSnake.setFood(Home.getNewFood());
             score+=nowLevel;
             nowScoreText.setText(String.valueOf(score));
